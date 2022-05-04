@@ -1,0 +1,15 @@
+current directory: /Users/cichowlasp/Projects/czytelnia_project/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.11.1/ext/bootsnap
+/Users/cichowlasp/.rbenv/versions/3.0.3/bin/ruby -I /Users/cichowlasp/.rbenv/versions/3.0.3/lib/ruby/3.0.0 -r ./siteconf20220504-1872-f8z07.rb extconf.rb
+creating Makefile
+
+current directory: /Users/cichowlasp/Projects/czytelnia_project/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/cichowlasp/Projects/czytelnia_project/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/cichowlasp/Projects/czytelnia_project/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20220504-1872-lv8awn/bootsnap
