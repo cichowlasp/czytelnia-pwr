@@ -1,0 +1,2 @@
+module SubscryptionsHelper
+end

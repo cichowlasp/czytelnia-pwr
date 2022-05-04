@@ -1,0 +1,52 @@
+<%= form_with(model: user_datum) do |form| %>
+  <% if user_datum.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user_datum.errors.count, "error") %> prohibited this user_datum from being saved:</h2>
+
+      <ul>
+        <% user_datum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :surname, style: "display: block" %>
+    <%= form.text_field :surname %>
+  </div>
+
+  <div>
+    <%= form.label :university, style: "display: block" %>
+    <%= form.text_field :university %>
+  </div>
+
+  <div>
+    <%= form.label :department, style: "display: block" %>
+    <%= form.text_field :department %>
+  </div>
+
+  <div>
+    <%= form.label :field_of_study, style: "display: block" %>
+    <%= form.text_field :field_of_study %>
+  </div>
+
+  <div>
+    <%= form.label :country, style: "display: block" %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

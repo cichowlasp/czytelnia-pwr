@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @subscryption %>
+
+<div>
+  <%= link_to "Edit this subscryption", edit_subscryption_path(@subscryption) %> |
+  <%= link_to "Back to subscryptions", subscryptions_path %>
+
+  <%= button_to "Destroy this subscryption", @subscryption, method: :delete %>
+</div>
