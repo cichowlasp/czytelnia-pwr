@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_093213) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_26_215932) do
   create_table "addresses", force: :cascade do |t|
     t.string "city"
     t.string "voivodship"
@@ -88,8 +88,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_093213) do
 
   create_table "users", force: :cascade do |t|
     t.boolean "admin"
+    t.integer "library_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["library_id"], name: "index_users_on_library_id"
   end
 
   add_foreign_key "addresses", "libraries"
@@ -99,4 +101,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_093213) do
   add_foreign_key "orders", "users"
   add_foreign_key "subscryptions", "libraries"
   add_foreign_key "user_data", "users"
+  add_foreign_key "users", "libraries"
 end

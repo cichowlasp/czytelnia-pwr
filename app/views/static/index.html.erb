@@ -1,0 +1,6 @@
+<h1>Wybierz uczelnie</h1>
+<ul>
+<% @libraries.each do |library| %>
+    <li><%= library.name %> <%= library.department %></li>
+<% end %>
+</ul>

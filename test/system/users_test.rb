@@ -15,6 +15,7 @@ class UsersTest < ApplicationSystemTestCase
     click_on "New user"
 
     check "Admin" if @user.admin
+    fill_in "Library", with: @user.library_id
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -26,6 +27,7 @@ class UsersTest < ApplicationSystemTestCase
     click_on "Edit this user", match: :first
 
     check "Admin" if @user.admin
+    fill_in "Library", with: @user.library_id
     click_on "Update User"
 
     assert_text "User was successfully updated"

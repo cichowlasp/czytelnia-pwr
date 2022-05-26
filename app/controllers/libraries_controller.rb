@@ -8,11 +8,13 @@ class LibrariesController < ApplicationController
 
   # GET /libraries/1 or /libraries/1.json
   def show
+    @user = User.new
   end
 
   # GET /libraries/new
   def new
     @library = Library.new
+    @library.users.build
   end
 
   # GET /libraries/1/edit
@@ -65,6 +67,6 @@ class LibrariesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def library_params
-      params.require(:library).permit(:name, :department)
+      params.require(:library).permit(:name, :department,user_params: [:library_id,:admin])
     end
 end

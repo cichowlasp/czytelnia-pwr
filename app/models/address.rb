@@ -1,4 +1,3 @@
 class Address < ApplicationRecord
-  belongs_to :user
-  belongs_to :library
+  belongs_to :user, :library
 end
