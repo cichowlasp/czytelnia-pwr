@@ -6,7 +6,7 @@
 
   <p>
     <strong>Library:</strong>
-    <%= user.library_id %>
+    <%=Library.find_by_id(user.library_id).name + ' ' + Library.find_by_id(user.library_id).department%>
   </p>
 
 </div>

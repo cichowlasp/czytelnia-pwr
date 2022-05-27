@@ -10,29 +10,29 @@ class UserDataController < ApplicationController
   def show
   end
 
-  # # GET /user_data/new
-  # def new
-  #   @user_datum = UserDatum.new
-  # end
+  # GET /user_data/new
+  def new
+    @user_datum = UserDatum.new
+  end
 
   # GET /user_data/1/edit
   def edit
   end
 
   # POST /user_data or /user_data.json
-  # def create
-  #   @user_datum = UserDatum.new(user_datum_params)
+  def create
+    @user_datum = UserDatum.new(user_datum_params)
 
-  #   respond_to do |format|
-  #     if @user_datum.save
-  #       format.html { redirect_to user_datum_url(@user_datum), notice: "User datum was successfully created." }
-  #       format.json { render :show, status: :created, location: @user_datum }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @user_datum.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @user_datum.save
+        format.html { redirect_to user_datum_url(@user_datum), notice: "User datum was successfully created." }
+        format.json { render :show, status: :created, location: @user_datum }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @user_datum.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PATCH/PUT /user_data/1 or /user_data/1.json
   def update

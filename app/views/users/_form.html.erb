@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :library_id, style: "display: block" %>
-    <%= form.text_field :library_id %>
+    <%= form.collection_select :library_id, Library.order(:name),:id,:name :department, include_blank: true %>
   </div>
 
   <div>

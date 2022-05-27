@@ -19,17 +19,6 @@
     <%= form.label :department, style: "display: block" %>
     <%= form.text_field :department %>
   </div>
-  <h2>User Create</h2>
-  <%= form_for :user do |user_form| %>
-  <div>
-    <%= form.label :admin, style: "display: block" %>
-    <%= form.check_box :admin %>
-  </div>
-    <div>
-    <%= form.label :library_id, style: "display: block" %>
-    <%= form.text_field :library_id %>
-  </div>
-  <% end %>
   <div>
     <%= form.submit %>
   </div>
