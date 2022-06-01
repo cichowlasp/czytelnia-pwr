@@ -22,10 +22,18 @@
   <%= form.label :password_confirmation %>
   <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
 </div>
-  <div>
+  
+  <% if params[:admin] %>
+    <div>
+    <%= form.hidden_field :admin, value: 1 %>
+  </div>
+  <% else %>
+    <div>
     <%= form.label :admin, style: "display: block" %>
     <%= form.check_box :admin %>
-  </div>
+    </div>
+  <% end %>
+
   <% if params[:library_id] %>
     <div>
     <%= form.hidden_field :library_id, value:params[:library_id] %>

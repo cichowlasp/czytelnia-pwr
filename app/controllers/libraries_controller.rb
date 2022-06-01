@@ -27,7 +27,7 @@ class LibrariesController < ApplicationController
 
     respond_to do |format|
       if @library.save
-        format.html { redirect_to :controller => "users", :action => "new", :library_id => @library.id, notice: "Library was successfully created." }
+        format.html { redirect_to :controller => "users", :action => "new", :library_id => @library.id, :admin => true, notice: "Library was successfully created." }
         format.json { render :show, status: :created, location: @library }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -28,10 +28,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_225131) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
-    t.string "type"
+    t.string "type_of_book"
     t.string "publisher"
     t.boolean "available"
-    t.integer "order_id", null: false
+    t.integer "order_id"
     t.integer "library_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -99,7 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_225131) do
   add_foreign_key "addresses", "libraries"
   add_foreign_key "addresses", "users"
   add_foreign_key "books", "libraries"
-  add_foreign_key "books", "orders"
   add_foreign_key "orders", "users"
   add_foreign_key "subscryptions", "libraries"
   add_foreign_key "user_data", "users"

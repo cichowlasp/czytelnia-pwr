@@ -22,8 +22,8 @@
   </div>
 
   <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.text_field :type %>
+    <%= form.label :type_of_book, style: "display: block" %>
+    <%= form.text_field :type_of_book %>
   </div>
 
   <div>
@@ -32,18 +32,17 @@
   </div>
 
   <div>
-    <%= form.label :available, style: "display: block" %>
-    <%= form.check_box :available %>
+    <%= form.hidden_field :available, value: 1 %>
   </div>
-
+  <% if !params[:new]%>
   <div>
     <%= form.label :order_id, style: "display: block" %>
     <%= form.text_field :order_id %>
   </div>
+  <% end %>
 
   <div>
-    <%= form.label :library_id, style: "display: block" %>
-    <%= form.text_field :library_id %>
+    <%= form.hidden_field :library_id, value: params[:library_id] %>
   </div>
 
   <div>

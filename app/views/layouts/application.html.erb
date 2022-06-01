@@ -18,6 +18,7 @@
   <% end %>
   <% if logged_in? %>
     <li><%= link_to current_user.index, current_user %></li>
+    <li><%= link_to "Ksiązki" ,books_path %></li>
     <li><%= link_to "Wyloguj", logout_path %></li>
   <% else %>
     <li><%= link_to "Zaloguj", login_path %></li>
