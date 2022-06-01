@@ -61,10 +61,8 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
-      @user_datum
-      if !UserDatum.where(:user_id => params[:id]).blank?
-        @user_datum = @user.user_datum
-      end
+      @user_datum = @user.user_datum
+
     end
 
     # Only allow a list of trusted parameters through.

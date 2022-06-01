@@ -1,16 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Books</h1>
+<% if current_user %>
+  <div id="books">
+    <% @books.select {|book| book.library_id == current_user.library_id}.each do |book| %>
+      <%= render book %>
+      <p>
+        <%= link_to "Show this book", book %>
+      </p>
+    <% end %>
+  </div>
 
-<div id="books">
-  <% @books.select {|book| book.library_id == current_user.library_id}.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-  <% end %>
-</div>
+  <% if current_user.admin %>
+    <%= link_to "New book",  {:controller => "books", :action => "new", :library_id => current_user.library_id, :new => true } %>
+  <%end%>
+<% else %>
+  <h2>Please Login</h2>
+<% end %>
 
-<% if current_user.admin %>
-  <%= link_to "New book",  {:controller => "books", :action => "new", :library_id => current_user.library_id, :new => true } %>
-<%end%>

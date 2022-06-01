@@ -17,13 +17,7 @@
     <strong>Library:</strong>
     <%=Library.find_by_id(user.library_id).name + ' ' + Library.find_by_id(user.library_id).department%>
   </p>
-  <% if !@user_datum %>
-    <% if logged_in? && (current_user.admin or current_user == @user) %>
-      <p>
-      <%= link_to "New user data", {:controller => "user_data", :action => "new", :user_id => user.id }%>
-      </p>
-    <%end%>
-  <% end %>
+
   
   
 

@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>User data</h1>
+<% if current_user && current_user.admin %>
+    <div id="user_data">
+    <% @user_data.select {|user| user.user_id == current_user.library_id}.each do |user_datum| %>
+      <%= render user_datum %>
+      <p>
+        <%= link_to "Show this user datum", user_datum %>
+      </p>
+      <% end %>
+    </div>
+  <% if current_user.admin %>
+    <%= link_to "New user datum", new_user_datum_path %>
+  <%end%>
+<% else %>
+  <h2>Please Login as an administrator</h2>
+<% end %>
 
-<div id="user_data">
-  <% @user_data.each do |user_datum| %>
-    <%= render user_datum %>
-    <p>
-      <%= link_to "Show this user datum", user_datum %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New user datum", new_user_datum_path %>
