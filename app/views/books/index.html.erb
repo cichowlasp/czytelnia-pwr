@@ -11,4 +11,6 @@
   <% end %>
 </div>
 
-<%= link_to "New book",  {:controller => "books", :action => "new", :library_id => current_user.library_id, :new => true } %>
+<% if current_user.admin %>
+  <%= link_to "New book",  {:controller => "books", :action => "new", :library_id => current_user.library_id, :new => true } %>
+<%end%>

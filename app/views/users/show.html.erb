@@ -5,8 +5,9 @@
 <%= link_to "Back to users", users_path %>
 <% if logged_in? && (current_user.admin or current_user == @user) %>
 <div>
-
-<%= link_to "Edit this user datum", edit_user_datum_path(@user_datum) %>
+<%if @user_datum%>
+  <%= link_to "Edit this user datum", edit_user_datum_path(@user_datum) %>
+<%end%>
 </div>
 
 <div>
