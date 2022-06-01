@@ -25,7 +25,7 @@ class UserDataController < ApplicationController
 
     respond_to do |format|
       if @user_datum.save
-        format.html { redirect_to user_datum_url(@user_datum), notice: "User datum was successfully created." }
+        format.html { redirect_to user_url(@user_datum.user_id), notice: "User datum was successfully created." }
         format.json { render :show, status: :created, location: @user_datum }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class UserDataController < ApplicationController
   def update
     respond_to do |format|
       if @user_datum.update(user_datum_params)
-        format.html { redirect_to user_datum_url(@user_datum), notice: "User datum was successfully updated." }
+        format.html { redirect_to user_url(@user_datum.user_id), notice: "User datum was successfully updated." }
         format.json { render :show, status: :ok, location: @user_datum }
       else
         format.html { render :edit, status: :unprocessable_entity }

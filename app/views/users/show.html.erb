@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @user %>
+<%= render "user_datum" %>
+<%= link_to "Back to users", users_path %>
+<% if logged_in? && (current_user.admin or current_user == @user) %>
+<div>
+
+<%= link_to "Edit this user datum", edit_user_datum_path(@user_datum) %>
+</div>
 
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
+  <%= link_to "Edit this user", edit_user_path(@user) %>
   <%= button_to "Destroy this user", @user, method: :delete %>
 </div>
+<%end%>

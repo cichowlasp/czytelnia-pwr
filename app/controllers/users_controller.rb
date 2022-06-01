@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to user_url(@user), notice: "User was successfully created." }
+        format.html { redirect_to :controller => "user_data", :action => "new", :user_id => @user.id , notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to logout_path, notice: "User was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -61,10 +61,14 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+      @user_datum
+      if !UserDatum.where(:user_id => params[:id]).blank?
+        @user_datum = @user.user_datum
+      end
     end
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:admin, :library_id)
+      params.require(:user).permit(:admin, :library_id, :index,:password, :password_confirmation)
     end
 end

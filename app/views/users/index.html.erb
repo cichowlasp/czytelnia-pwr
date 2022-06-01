@@ -10,5 +10,9 @@
     </p>
   <% end %>
 </div>
+<% if (logged_in? && current_user.admin)  %>
+<div>
+  <%= link_to "New user", new_user_path %>
+</div>
+<%end%>
 
-<%= link_to "New user", new_user_path %>

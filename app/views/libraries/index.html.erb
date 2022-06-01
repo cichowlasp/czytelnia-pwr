@@ -10,5 +10,7 @@
     </p>
   <% end %>
 </div>
+<% if logged_in? && current_user.admin %>
+    <%= link_to "New library", new_library_path %>
+<% end %>
 
-<%= link_to "New library", new_library_path %>

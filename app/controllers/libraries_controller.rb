@@ -27,7 +27,7 @@ class LibrariesController < ApplicationController
 
     respond_to do |format|
       if @library.save
-        format.html { redirect_to library_url(@library), notice: "Library was successfully created." }
+        format.html { redirect_to :controller => "users", :action => "new", :library_id => @library.id, notice: "Library was successfully created." }
         format.json { render :show, status: :created, location: @library }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class LibrariesController < ApplicationController
     @library.destroy
 
     respond_to do |format|
-      format.html { redirect_to libraries_url, notice: "Library was successfully destroyed." }
+      format.html { redirect_to logout_path, notice: "Library was successfully destroyed." }
       format.json { head :no_content }
     end
   end

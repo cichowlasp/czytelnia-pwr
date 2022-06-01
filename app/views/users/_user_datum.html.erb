@@ -1,0 +1,34 @@
+<% if @user_datum %>
+  <div>
+<h1>User Data</h1>
+  <p>
+    <strong>Name:</strong>
+    <%= @user_datum.name %>
+  </p>
+
+  <p>
+    <strong>Surname:</strong>
+    <%= @user_datum.surname %>
+  </p>
+
+  <p>
+    <strong>University:</strong>
+    <%= @user_datum.university %>
+  </p>
+
+  <p>
+    <strong>Department:</strong>
+    <%= @user_datum.department %>
+  </p>
+
+  <p>
+    <strong>Field of study:</strong>
+    <%= @user_datum.field_of_study %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= @user_datum.country %>
+  </p>
+</div>
+<% end %>

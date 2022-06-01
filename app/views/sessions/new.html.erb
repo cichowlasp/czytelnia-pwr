@@ -1,0 +1,17 @@
+<h1>Logowanie</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+<div>
+<%= f.label :index %>
+</div>
+<div>
+<%= f.text_field :index, class: 'form-control' %>
+</div>
+<div>
+<%= f.label :password %>
+</div>
+<div>
+<%= f.password_field :password, class: 'form-control' %>
+</div>
+<%= f.submit "Zaloguj" %>
+<% end %>

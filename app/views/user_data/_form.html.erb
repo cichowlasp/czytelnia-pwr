@@ -40,11 +40,15 @@
     <%= form.label :country, style: "display: block" %>
     <%= form.text_field :country %>
   </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+  <% if params[:user_id] %>
+    <div>
+    <%= form.hidden_field :user_id, value:params[:user_id] %>
   </div>
+  <% else %>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id, value:params[:user_id] %>
+  <% end %>
+  
 
   <div>
     <%= form.submit %>
