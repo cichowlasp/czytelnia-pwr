@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-
   # GET /users or /users.json
   def index
     @users = User.all
@@ -55,6 +54,10 @@ class UsersController < ApplicationController
       format.html { redirect_to logout_path, notice: "User was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def invalidate_token
+    self.update_columns(token: nil)
   end
 
   private

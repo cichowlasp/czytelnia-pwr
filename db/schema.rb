@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_225131) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_01_233128) do
   create_table "addresses", force: :cascade do |t|
     t.string "city"
     t.string "voivodship"
@@ -93,7 +93,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_225131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "token"
     t.index ["library_id"], name: "index_users_on_library_id"
+    t.index ["token"], name: "index_users_on_token"
   end
 
   add_foreign_key "addresses", "libraries"

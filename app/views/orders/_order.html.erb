@@ -13,5 +13,15 @@
     <strong>User:</strong>
     <%= order.user_id %>
   </p>
+  <div id="books">
+    <% Book.select {|book| book.library_id == current_user.library_id}.each do |book| %>
+      <div>
+          <span>Title: <%= book.title %></span>, Author: <span><%= book.author %></span>
+          <p>
+          </p>
+      </div>
+    
+    <% end %>
+  </div>
 
 </div>

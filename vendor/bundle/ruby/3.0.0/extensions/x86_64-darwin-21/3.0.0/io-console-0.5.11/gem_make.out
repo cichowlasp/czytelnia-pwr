@@ -1,5 +1,5 @@
 current directory: /Users/cichowlasp/Projects/czytelnia_project/vendor/bundle/ruby/3.0.0/gems/io-console-0.5.11/ext/io/console
-/Users/cichowlasp/.rbenv/versions/3.0.3/bin/ruby -I /Users/cichowlasp/.rbenv/versions/3.0.3/lib/ruby/3.0.0 -r ./siteconf20220504-1872-9sqf41.rb extconf.rb
+/Users/cichowlasp/.rbenv/versions/3.0.3/bin/ruby -I /Users/cichowlasp/.rbenv/versions/3.0.3/lib/ruby/3.0.0 -r ./siteconf20220602-48701-5bki3v.rb extconf.rb
 checking for termios.h... yes
 checking for cfmakeraw() in termios.h... yes
 checking for sys/ioctl.h... yes
@@ -17,4 +17,4 @@ linking shared-object io/console.bundle
 
 current directory: /Users/cichowlasp/Projects/czytelnia_project/vendor/bundle/ruby/3.0.0/gems/io-console-0.5.11/ext/io/console
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 console.bundle ./.gem.20220504-1872-pbjcxs/io
+/usr/bin/install -c -m 0755 console.bundle ./.gem.20220602-48701-4ojbby/io

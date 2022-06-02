@@ -12,20 +12,21 @@
   <% end %>
 
   <div>
-    <%= form.label :order_date, style: "display: block" %>
-    <%= form.text_field :order_date %>
+    <%= form.hidden_field :order_date, value: "#{DateTime.current.to_date}" %>
   </div>
 
   <div>
-    <%= form.label :return_date, style: "display: block" %>
-    <%= form.text_field :return_date %>
+    <%= form.hidden_field :return_date, value: "#{DateTime.current.to_date + 14}" %>
   </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
+  <% if current_user%>
+    <div>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+  <% else %>
+      <%= form.label :user_id, style: "display: block" %>
+      <%= form.text_field :user_id %>
+  <% end %>
+  <%= form.collection_select :book_id, Book.where(library_id: current_user.library_id, available: true),:id,:title,{},multiple: true %>
   <div>
     <%= form.submit %>
   </div>

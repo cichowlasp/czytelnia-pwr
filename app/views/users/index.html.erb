@@ -6,10 +6,10 @@
     <% @users.select {|user| user.library_id == current_user.library_id}.each do |user| %>
       <%if user.id == current_user.id || current_user.admin%>
         <%= render user %>
+        <p>
+          <%= link_to "Show this user", user %>
+        </p>
       <%end%>
-      <p>
-        <%= link_to "Show this user", user %>
-      </p>
     <% end %>
   </div>
   <% if (logged_in? && current_user.admin)  %>
