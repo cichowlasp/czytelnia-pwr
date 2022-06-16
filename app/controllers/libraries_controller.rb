@@ -1,12 +1,21 @@
 class LibrariesController < ApplicationController
   before_action :set_library, only: %i[ show edit update destroy ]
-
+  swagger_controller :libraries, 'Libraries'
   # GET /libraries or /libraries.json
+  swagger_api :index do
+    summary 'Returns all Libraries'
+    notes 'Notes...'
+  end
   def index
     @libraries = Library.all
   end
 
   # GET /libraries/1 or /libraries/1.json
+  swagger_api :show do
+    summary 'Return one Library'
+    param :path, :id, :integer, :required, "Library id"
+    notes 'Notes...'
+  end
   def show
     @user = User.new
   end
@@ -22,6 +31,12 @@ class LibrariesController < ApplicationController
   end
 
   # POST /libraries or /libraries.json
+  swagger_api :create do
+    summary 'Create new library'
+    param :form, "library[name]", :string, :required, "Library name"
+    param :form, "library[department]", :string, :required, "department of library"
+    notes 'Notes...'
+  end
   def create
     @library = Library.new(library_params)
 
@@ -36,6 +51,14 @@ class LibrariesController < ApplicationController
     end
   end
 
+  swagger_api :update do
+    summary 'Update library'
+    param :path, :id, :integer, :required, "Library id"
+    param :form, "library[name]", :string, :required, "Library name"
+    param :form, "library[department]", :string, :required, "department of library"
+    notes 'Notes...'
+  end
+
   # PATCH/PUT /libraries/1 or /libraries/1.json
   def update
     respond_to do |format|
@@ -47,6 +70,12 @@ class LibrariesController < ApplicationController
         format.json { render json: @library.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  swagger_api :destroy do
+    summary 'Removes library'
+    param :path, :id, :integer, :required, "Library id"
+    notes 'Notes...'
   end
 
   # DELETE /libraries/1 or /libraries/1.json
@@ -67,6 +96,6 @@ class LibrariesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def library_params
-      params.require(:library).permit(:name, :department,users_params: [:id,:admin,:_destroy])
+      params.require(:library).permit(:name, :department)
     end
 end

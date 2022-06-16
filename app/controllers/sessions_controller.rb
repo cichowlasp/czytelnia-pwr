@@ -1,8 +1,12 @@
 class SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  swagger_controller :session, "Authentication"
   def new
   end
-
+  swagger_api :create do
+    summary "Gather a token"
+    param :form, "session[index]", :string, :required, "User index"
+    param :form, "session[password]", :string, :required, "User password"
+  end
   def create
     respond_to do |format|
       user = User.find_by(index: params[:session][:index])
@@ -26,7 +30,10 @@ class SessionsController < ApplicationController
       end
     end
   end
-
+  swagger_api :destroy do
+    param :form, :id, :integer, :required, "User id"
+    summary "destroy token"
+  end
   def destroy
     log_out
     redirect_to root_url
