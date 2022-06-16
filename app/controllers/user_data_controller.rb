@@ -13,7 +13,7 @@ class UserDataController < ApplicationController
   # GET /user_data/1 or /user_data/1.json
   swagger_api :show do
     summary 'Returns specific Users Data'
-    param :path, :id, :integer, :required, "User id"
+    param :path, :id, :integer, :required, "User data id"
     notes 'Notes...'
   end
   def show
@@ -23,16 +23,16 @@ class UserDataController < ApplicationController
   def new
     @user_datum = UserDatum.new
   end
-  swagger_api :edit do
-    summary 'Returns specific Users Data'
+  swagger_api :update do
+    summary 'Edit specific Users Data'
     param :path, :id, :integer, :required, "User Data id"
-    param :form, "user_data[name]", :string, :required, "User name"
-    param :form, "user_data[surname]", :string, :required, "User surname"
-    param :form, "user_data[university]", :string, :required, "User university"
-    param :form, "user_data[department]", :string, :required, "User department"
-    param :form, "user_data[field_of_study]", :string, :required, "user field of study"
-    param :form, "user_data[country]", :string, :required, "User country"
-    param :form, "user_data[user_id]", :string, :required, "User id"
+    param :form, "user_datum[name]", :string, :required, "User name"
+    param :form, "user_datum[surname]", :string, :required, "User surname"
+    param :form, "user_datum[university]", :string, :required, "User university"
+    param :form, "user_datum[department]", :string, :required, "User department"
+    param :form, "user_datum[field_of_study]", :string, :required, "user field of study"
+    param :form, "user_datum[country]", :string, :required, "User country"
+    param :form, "user_datum[user_id]", :string, :required, "User id"
     notes 'Notes...'
   end
   # GET /user_data/1/edit
@@ -40,15 +40,17 @@ class UserDataController < ApplicationController
   end
 
   # POST /user_data or /user_data.json
+  
   swagger_api :create do
-    summary 'Returns specific Users Data'
-    param :form, "user_data[name]", :string, :required, "User name"
-    param :form, "user_data[surname]", :string, :required, "User surname"
-    param :form, "user_data[university]", :string, :required, "User university"
-    param :form, "user_data[department]", :string, :required, "User department"
-    param :form, "user_data[field_of_study]", :string, :required, "user field of study"
-    param :form, "user_data[country]", :string, :required, "User country"
-    param :form, "user_data[user_id]", :string, :required, "User id"
+    summary 'Create User Data'
+    param :path, :id, :integer, :required, "User id"
+    param :form, "user_datum[name]", :string, :required, "User name"
+    param :form, "user_datum[surname]", :string, :required, "User surname"
+    param :form, "user_datum[university]", :string, :required, "User university"
+    param :form, "user_datum[department]", :string, :required, "User department"
+    param :form, "user_datum[field_of_study]", :string, :required, "user field of study"
+    param :form, "user_datum[country]", :string, :required, "User country"
+    param :form, "user_datum[user_id]", :string, :required, "User id"
     notes 'Notes...'
   end
   def create
@@ -83,6 +85,11 @@ class UserDataController < ApplicationController
   end
 
   # DELETE /user_data/1 or /user_data/1.json
+  swagger_api :destroy do
+    summary 'Delete specific user data'
+    param :path, :id, :integer, :required, "User Data id"
+    notes 'Notes...'
+  end
   def destroy
     @user_datum.destroy
 

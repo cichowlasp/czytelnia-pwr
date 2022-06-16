@@ -1,12 +1,22 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
+  swagger_controller :orders, 'Orders'
 
   # GET /orders or /orders.json
+  swagger_api :index do
+    summary 'Return all Orders'
+    notes 'Notes...'
+  end
   def index
     @orders = Order.all
   end
 
   # GET /orders/1 or /orders/1.json
+  swagger_api :show do
+    summary 'Return specific Order'
+    param :path, :id, :integer, :required, "Order ID"
+    notes 'Notes...'
+  end
   def show
   end
 
@@ -16,10 +26,25 @@ class OrdersController < ApplicationController
   end
 
   # GET /orders/1/edit
+  swagger_api :update do
+    summary 'Edit specific Order'
+    param :path, :id, :integer, :required, "Order ID"
+    param :form, "order[order_date]", :date, :required, "Order date"
+    param :form, "order[return_date]", :date, :required, "Return date"
+    param :form, "order[user_id]", :date, :required, "User ID"
+    notes 'Notes...'
+  end
   def edit
   end
 
   # POST /orders or /orders.json
+  swagger_api :create do
+    summary 'Create new order'
+    param :form, "order[order_date]", :date, :required, "Order date"
+    param :form, "order[return_date]", :date, :required, "Return date"
+    param :form, "order[user_id]", :date, :required, "User ID"
+    notes 'Notes...'
+  end
   def create
     @order = Order.new(order_params)
     p order_params
@@ -49,6 +74,11 @@ class OrdersController < ApplicationController
   end
 
   # DELETE /orders/1 or /orders/1.json
+  swagger_api :destroy do
+    summary 'Delete specific Order'
+    param :path, :id, :integer, :required, "Order ID"
+    notes 'Notes...'
+  end
   def destroy
     @order.destroy
 

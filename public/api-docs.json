@@ -12,6 +12,10 @@
       "description": "Books"
     },
     {
+      "path": "/orders.{format}",
+      "description": "Orders"
+    },
+    {
       "path": "/user_data.{format}",
       "description": "Users Data"
     },

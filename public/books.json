@@ -14,6 +14,163 @@
           "method": "get"
         }
       ]
+    },
+    {
+      "path": "/books",
+      "operations": [
+        {
+          "summary": "Create book",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "book[title]",
+              "type": "string",
+              "description": "Book title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[author]",
+              "type": "string",
+              "description": "Book author",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[publisher]",
+              "type": "string",
+              "description": "Book publisher",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[available]",
+              "type": "boolean",
+              "description": "Book available",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[library_id]",
+              "type": "string",
+              "description": "Book library",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[order_id]",
+              "type": "string",
+              "description": "Book order_id",
+              "required": false
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Books#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/books/{id}",
+      "operations": [
+        {
+          "summary": "Return specific book",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book ID",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Books#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/books/{id}",
+      "operations": [
+        {
+          "summary": "Edit specific book",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[title]",
+              "type": "string",
+              "description": "Book title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[author]",
+              "type": "string",
+              "description": "Book author",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[publisher]",
+              "type": "string",
+              "description": "Book publisher",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[available]",
+              "type": "boolean",
+              "description": "Book available",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[library_id]",
+              "type": "string",
+              "description": "Book library",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[order_id]",
+              "type": "string",
+              "description": "Book order_id",
+              "required": false
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Books#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/books/{id}",
+      "operations": [
+        {
+          "summary": "Delete specific book",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book ID",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Books#destroy",
+          "method": "delete"
+        }
+      ]
     }
   ],
   "authorizations": null
