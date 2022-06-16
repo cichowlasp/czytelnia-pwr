@@ -1,7 +1,11 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
-
+  swagger_controller :book, 'Books'
   # GET /books or /books.json
+  swagger_api :index do
+    summary 'Return all books'
+    notes 'Notes...'
+  end
   def index
     @books = Book.all
   end

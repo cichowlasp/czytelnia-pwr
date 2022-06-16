@@ -1,0 +1,171 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://127.0.0.1:3000",
+  "resourcePath": "user_data",
+  "apis": [
+    {
+      "path": "/user_data",
+      "operations": [
+        {
+          "summary": "Returns all Users Data",
+          "notes": "Notes...",
+          "nickname": "UserData#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/user_data",
+      "operations": [
+        {
+          "summary": "Returns specific Users Data",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "user_data[name]",
+              "type": "string",
+              "description": "User name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[surname]",
+              "type": "string",
+              "description": "User surname",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[university]",
+              "type": "string",
+              "description": "User university",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[department]",
+              "type": "string",
+              "description": "User department",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[field_of_study]",
+              "type": "string",
+              "description": "user field of study",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[country]",
+              "type": "string",
+              "description": "User country",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[user_id]",
+              "type": "string",
+              "description": "User id",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "UserData#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/user_data/{id}/edit",
+      "operations": [
+        {
+          "summary": "Returns specific Users Data",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Data id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[name]",
+              "type": "string",
+              "description": "User name",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[surname]",
+              "type": "string",
+              "description": "User surname",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[university]",
+              "type": "string",
+              "description": "User university",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[department]",
+              "type": "string",
+              "description": "User department",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[field_of_study]",
+              "type": "string",
+              "description": "user field of study",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[country]",
+              "type": "string",
+              "description": "User country",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user_data[user_id]",
+              "type": "string",
+              "description": "User id",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "UserData#edit",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/user_data/{id}",
+      "operations": [
+        {
+          "summary": "Returns specific Users Data",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User id",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "UserData#show",
+          "method": "get"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

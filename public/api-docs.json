@@ -4,6 +4,22 @@
   "basePath": "http://127.0.0.1:3000",
   "apis": [
     {
+      "path": "/sessions.{format}",
+      "description": "Authentication"
+    },
+    {
+      "path": "/books.{format}",
+      "description": "Books"
+    },
+    {
+      "path": "/user_data.{format}",
+      "description": "Users Data"
+    },
+    {
+      "path": "/users.{format}",
+      "description": "Users"
+    },
+    {
       "path": "/libraries.{format}",
       "description": "Libraries"
     }

@@ -1,12 +1,21 @@
 class UserDataController < ApplicationController
   before_action :set_user_datum, only: %i[ show edit update destroy ]
-
+  swagger_controller :user_datum, 'Users Data'
   # GET /user_data or /user_data.json
+  swagger_api :index do
+    summary 'Returns all Users Data'
+    notes 'Notes...'
+  end
   def index
     @user_data = UserDatum.all
   end
 
   # GET /user_data/1 or /user_data/1.json
+  swagger_api :show do
+    summary 'Returns specific Users Data'
+    param :path, :id, :integer, :required, "User id"
+    notes 'Notes...'
+  end
   def show
   end
 
@@ -14,12 +23,34 @@ class UserDataController < ApplicationController
   def new
     @user_datum = UserDatum.new
   end
-
+  swagger_api :edit do
+    summary 'Returns specific Users Data'
+    param :path, :id, :integer, :required, "User Data id"
+    param :form, "user_data[name]", :string, :required, "User name"
+    param :form, "user_data[surname]", :string, :required, "User surname"
+    param :form, "user_data[university]", :string, :required, "User university"
+    param :form, "user_data[department]", :string, :required, "User department"
+    param :form, "user_data[field_of_study]", :string, :required, "user field of study"
+    param :form, "user_data[country]", :string, :required, "User country"
+    param :form, "user_data[user_id]", :string, :required, "User id"
+    notes 'Notes...'
+  end
   # GET /user_data/1/edit
   def edit
   end
 
   # POST /user_data or /user_data.json
+  swagger_api :create do
+    summary 'Returns specific Users Data'
+    param :form, "user_data[name]", :string, :required, "User name"
+    param :form, "user_data[surname]", :string, :required, "User surname"
+    param :form, "user_data[university]", :string, :required, "User university"
+    param :form, "user_data[department]", :string, :required, "User department"
+    param :form, "user_data[field_of_study]", :string, :required, "user field of study"
+    param :form, "user_data[country]", :string, :required, "User country"
+    param :form, "user_data[user_id]", :string, :required, "User id"
+    notes 'Notes...'
+  end
   def create
     @user_datum = UserDatum.new(user_datum_params)
 

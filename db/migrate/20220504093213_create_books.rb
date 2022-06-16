@@ -8,7 +8,6 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.boolean :available
       t.references :order
       t.references :library, null: false, foreign_key: true
-
       t.timestamps
     end
   end
