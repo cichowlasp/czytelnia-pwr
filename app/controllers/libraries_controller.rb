@@ -1,7 +1,11 @@
 class LibrariesController < ApplicationController
   before_action :set_library, only: %i[ show edit update destroy ]
-
+  swagger_controller :library, 'Libraries'
   # GET /libraries or /libraries.json
+  swagger_api :index do
+    summary 'Returns all Libraries'
+    notes 'Notes...'
+  end
   def index
     @libraries = Library.all
   end
