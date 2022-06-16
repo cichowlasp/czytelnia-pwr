@@ -16,6 +16,10 @@
       "description": "Orders"
     },
     {
+      "path": "/subscryptions.{format}",
+      "description": "Subscryptions"
+    },
+    {
       "path": "/user_data.{format}",
       "description": "Users Data"
     },

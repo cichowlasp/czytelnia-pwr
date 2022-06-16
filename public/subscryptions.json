@@ -1,0 +1,135 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://127.0.0.1:3000",
+  "resourcePath": "subscryptions",
+  "apis": [
+    {
+      "path": "/subscryptions",
+      "operations": [
+        {
+          "summary": "Returns all Subscryptions",
+          "notes": "Notes...",
+          "nickname": "Subscryptions#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/subscryptions",
+      "operations": [
+        {
+          "summary": "Returns specific Subscryptions",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "subscryption[price]",
+              "type": "string",
+              "description": "Subscryption price",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "subscryption[level]",
+              "type": "string",
+              "description": "Subscryption levels",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "subscryption[library_id]",
+              "type": "string",
+              "description": "Library ID",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Subscryptions#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/subscryptions/{id}",
+      "operations": [
+        {
+          "summary": "Returns specific Subscryptions",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Subscryption ID",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Subscryptions#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/subscryptions/{id}",
+      "operations": [
+        {
+          "summary": "Update specific Subscryptions",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Subscryption ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "subscryption[price]",
+              "type": "string",
+              "description": "Subscryption price",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "subscryption[level]",
+              "type": "string",
+              "description": "Subscryption levels",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "subscryption[library_id]",
+              "type": "string",
+              "description": "Library ID",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Subscryptions#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/subscryptions/{id}",
+      "operations": [
+        {
+          "summary": "Remove specific Subscryptions",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Subscryption ID",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Subscryptions#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
