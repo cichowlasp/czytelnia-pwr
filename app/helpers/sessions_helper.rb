@@ -27,7 +27,7 @@ module SessionsHelper
 
     def authenticate_token
         authenticate_with_http_token do |token, options|
-            @current_student ||= Student.find_by(token: token)
+            @current_student ||= User.find_by(token: token)
         end
     end
 

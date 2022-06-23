@@ -4,6 +4,10 @@
   "basePath": "http://127.0.0.1:3000",
   "apis": [
     {
+      "path": "/static.{format}",
+      "description": "Static"
+    },
+    {
       "path": "/sessions.{format}",
       "description": "Authentication"
     },

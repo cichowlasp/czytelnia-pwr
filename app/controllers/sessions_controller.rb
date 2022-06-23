@@ -31,11 +31,21 @@ class SessionsController < ApplicationController
     end
   end
   swagger_api :destroy do
-    param :form, :id, :integer, :required, "User id"
     summary "destroy token"
   end
   def destroy
-    log_out
-    redirect_to root_url
+    respond_to do |format|
+      format.html do
+        log_out
+        redirect_to root_url
+      end
+      format.json do
+        require_token
+        if current_student
+          current_student.invalidate_token
+          head :ok
+        end
+      end
+    end
   end
 end

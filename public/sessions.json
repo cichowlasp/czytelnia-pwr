@@ -35,15 +35,6 @@
       "operations": [
         {
           "summary": "destroy token",
-          "parameters": [
-            {
-              "paramType": "form",
-              "name": "id",
-              "type": "integer",
-              "description": "User id",
-              "required": true
-            }
-          ],
           "nickname": "Sessions#destroy",
           "method": "get"
         }
